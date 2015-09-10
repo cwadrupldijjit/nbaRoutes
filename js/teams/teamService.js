@@ -4,22 +4,22 @@ app.service('teamService', function($http, $q){
 	this.addNewGame = function(gameObject) {
 		var url = 'https://api.parse.com/1/classes/' + gameObject.homeTeam;
 		
+		console.log('url:', url);
+		
 		// if (parseInt(gameObject.homeTeamScore) > parseInt(gameObject.opponentScore)) {
 		// 	gameObject.won = true;
 		// } else {
 		// 	gameObject.won = false;
 		// }
 		
-		$http({
-			method: 'POST',
-			url: url,
-			data: gameObject
-		});
+		$http.post(url, gameObject);
 	};
 	
 	this.getTeamData = function(team) {
 		var deferred = $q.defer();
 		var url = 'https://api.parse.com/1/classes/' + team;
+		
+		console.log('url:', url);
 		
 		deferred.resolve($http({
 			method: 'GET',

@@ -15,7 +15,7 @@
     <button ng-click="addGame()"> Submit Game </button>
   </form>
   <div class="team-data">
-    <div class="game" ng-repeat="game in teamData" ng-class="{'even' : $index % 2 === 0}">
+    <div class="game" ng-repeat="game in teamData | orderBy: '-createdAt'" ng-class="{'even' : $index % 2 === 0}">
       <!-- Each game should end up looking something like this:
         Date: May 29, 1997
         Utah Jazz - 103

@@ -2,6 +2,7 @@ var app = angular.module('nbaRoutes');
 
 app.controller('teamCtrl', function($scope, $routeParams, teamService){
 	$scope.teamData;
+	
 	function getTeamData() {
 		teamService.getTeamData($routeParams.id).then(function(data){
 			$scope.teamData = data;
