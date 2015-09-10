@@ -35,7 +35,7 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService){
 			won: (this.homeTeamScore > this.opponentScore)
 		}
 		
-		console.log(newGame);
+		// console.log(newGame);
 		teamService.addNewGame(newGame);
 		
 		setTimeout(function() {
